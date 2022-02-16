@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProductDescriptionController;
+use App\Http\Controllers\SmartphoneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +15,5 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PageController::class, 'index']);
+Route::get('/{slug}', [PageController::class, 'product']);
