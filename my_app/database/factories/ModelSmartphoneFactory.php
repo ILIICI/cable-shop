@@ -24,6 +24,7 @@ class ModelSmartphoneFactory extends Factory
         $faker->addProvider(new Device($faker));
 
         return [
+            'modelsmartphone_id'=> $faker->randomDigitNotNull(),
             'smartphone_id' =>Smartphone::all()->random()->id,
             'model_name' =>$faker->deviceModelName,
             'price' => rand(10,99),

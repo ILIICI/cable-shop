@@ -2,5 +2,5 @@
 @section('title', 'Home Page')
 @section('content')
     <x-jumbotron />
-    <x-product-card />
+    <x-list_card />
 @stop

@@ -23,7 +23,7 @@ class SmartphoneFactory extends Factory
         $faker->addProvider(new Device($faker));
 
         return [
-           'brand_name' =>$faker->deviceManufacturer
+           'brand_name' =>$faker->unique()->deviceManufacturer,
         ];
     }
 }

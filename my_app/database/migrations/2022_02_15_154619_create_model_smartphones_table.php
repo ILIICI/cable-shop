@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('model_smartphones', function (Blueprint $table) {
             $table->id();
+            $table->uuid('modelsmartphone_id')->unique();
             $table->bigInteger('smartphone_id')->unsigned();
             $table->string('model_name');
             $table->string('slug')->nullable();

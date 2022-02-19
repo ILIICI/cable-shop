@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 
 class ModelSmartphoneController extends Controller
 {
-    public static function getPhoneModels(){
-        $listOfModels = ModelSmartphone::all(['smartphone_id','model_name','slug']);
-        return $listOfModels;
+    public function getModels(){
+        return ModelSmartphone::all();
     }
 }

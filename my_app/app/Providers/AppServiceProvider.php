@@ -27,9 +27,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $brands = SmartphoneController::getAllBrands();
+/*         $brands = SmartphoneController::getAllBrands();
         $models = ModelSmartphoneController::getPhoneModels();
         Schema::defaultStringLength(191);
-        View::share(['listOfBrands' => $brands, 'listOfModels' => $models]);
+        View::share(['listOfBrands' => $brands, 'listOfModels' => $models]); */
     }
 }

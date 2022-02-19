@@ -6,14 +6,15 @@ use Illuminate\View\Component;
 
 class product_card extends Component
 {
+    public $parameters;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($parameters)
     {
-        //
+        $this->parameters = $parameters;
     }
 
     /**

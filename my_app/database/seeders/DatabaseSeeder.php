@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
         Smartphone::factory(5)->create();
         ModelSmartphone::factory(40)->create();
     }
