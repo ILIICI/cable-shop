@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use App\Http\Controllers\SmartphoneController;
 use App\Http\Controllers\ModelSmartphoneController;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Paginator::useBootstrapFive();
 /*         $brands = SmartphoneController::getAllBrands();
         $models = ModelSmartphoneController::getPhoneModels();
         Schema::defaultStringLength(191);

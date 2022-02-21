@@ -7,14 +7,26 @@ use App\Helper\HelperClass;
 use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
 use App\Models\ModelSmartphone;
+use App\Models\Navbar;
+use App\Models\SubcategoryModel;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\ItemNotFoundException;
+
 use Illuminate\Support\Facades\Request as Req;
 
 class PageController extends Controller
 {
     public function index(){
-        return view('pages.index');
+        $data = ModelSmartphone::paginate(8);
+        return view('pages.index')->with('parameters', $data);;
+    }
+
+    public function productDetails(){
+        $currentURL = Req::segment(2);
+        $data = ModelSmartphone::where('slug', $currentURL)
+            ->get(['model_name','modelsmartphone_id', 'price', 'slug', 'description'])
+            ->firstOrFail();
+        return view ('pages.product_details')->with('parameters', $data);;
     }
 
     public function description(){
@@ -54,5 +66,15 @@ class PageController extends Controller
 
         return view('pages.checkout')->with('cart',$items)->with('sum',$sum);
     }
+    public function category(){
+        $currentURL = Req::segment(2);
+        $category = Navbar::where('slug', $currentURL)->get('id');
+        $subcategory = SubcategoryModel::where('navbars_id', $category);
+
+
+        return view('pages.shoplist')->with('category',$category)->with('subcategory',$subcategory);
+    }
+
+
 
 }

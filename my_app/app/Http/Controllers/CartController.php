@@ -16,7 +16,7 @@ class CartController extends Controller
             'id' => $product->modelsmartphone_id,
             'name' => $product->model_name,
             'price' => $product->price,
-            'quantity' => 1,
+            'quantity' => $req->qty ?? 1,
         ]);
         $items = \Cart::getContent();
         return redirect()->back();

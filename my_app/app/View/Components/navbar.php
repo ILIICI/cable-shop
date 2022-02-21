@@ -2,10 +2,11 @@
 
 namespace App\View\Components;
 
+use App\Models\navbar as NavBarModel;
 use Illuminate\View\Component;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\SmartphoneController;
 use App\Http\Controllers\ModelSmartphoneController;
-use Illuminate\Support\Facades\Session;
 
 class navbar extends Component
 {
@@ -26,15 +27,6 @@ class navbar extends Component
      */
     public function render()
     {
-/*         $model = new ModelSmartphoneController();
-        $brand = new SmartphoneController();
-        \Cart::session(Session::getId());
-        $items = \Cart::getContent();
-        $sum = \Cart::getTotal('price');
-        return view('components.navbar')
-            ->with('models',$model->getModels())
-            ->with('brands',$brand->getBrands())
-            ->with('cart',$items)
-            ->with('sum',$sum); */
+        return view('livewire.navbar');
     }
 }

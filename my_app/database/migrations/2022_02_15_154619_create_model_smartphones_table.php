@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('model_smartphones', function (Blueprint $table) {
             $table->id();
             $table->uuid('modelsmartphone_id')->unique();
+            $table->uuid('subcategory_id')->unique();
             $table->bigInteger('smartphone_id')->unsigned();
             $table->string('model_name');
             $table->string('slug')->nullable();
@@ -26,6 +27,12 @@ return new class extends Migration
             $table->foreign('smartphone_id')
                 ->references('id')
                 ->on('smartphones')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('subcategory_id')
+                ->references('id')
+                ->on('subcategory_models')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
