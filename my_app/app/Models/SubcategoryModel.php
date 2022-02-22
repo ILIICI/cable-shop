@@ -14,13 +14,13 @@ class SubcategoryModel extends Model
 
     protected $table = "subcategory_models";
     protected $primaryKey = "id";
-    protected $fillable = ['navbars_id','subcategory_item_title','subcategory_item_route','slug'];
+    protected $fillable = ['navbars_id', 'subcategory_item_title', 'subcategory_item_route', 'slug'];
     public $timestamps = false;
 
 
     public function category()
     {
-        return $this->belongsTo(Navbar::class,'id','navbars_id');
+        return $this->belongsTo(Navbar::class, 'id', 'navbars_id');
     }
     public function sluggable(): array
     {

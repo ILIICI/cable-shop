@@ -29,9 +29,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrapFive();
-/*         $brands = SmartphoneController::getAllBrands();
-        $models = ModelSmartphoneController::getPhoneModels();
-        Schema::defaultStringLength(191);
-        View::share(['listOfBrands' => $brands, 'listOfModels' => $models]); */
     }
 }

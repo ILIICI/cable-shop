@@ -14,8 +14,8 @@ class ModelSmartphone extends Model
 
     protected $table = "model_smartphones";
     protected $primaryKey = "id";
-    protected $fillable = ['model_name','modelsmartphone_id','slug','price','description'];
-    protected $hidden = ['id','created_at','updated_at'];
+    protected $fillable = ['model_name', 'modelsmartphone_id', 'slug', 'price', 'description'];
+    protected $hidden = ['id', 'created_at', 'updated_at'];
 
     public function smartphoneBrand()
     {

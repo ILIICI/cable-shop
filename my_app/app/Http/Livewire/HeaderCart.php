@@ -19,19 +19,21 @@ class HeaderCart extends Component
 
 
         return view('livewire.header-cart')
-        ->with('models',$model->getModels())
-        ->with('brands',$brand->getBrands())
-        ->with('cart',$items)
-        ->with('sum',$sum);
+            ->with('models', $model->getModels())
+            ->with('brands', $brand->getBrands())
+            ->with('cart', $items)
+            ->with('sum', $sum);
     }
-    public function deleteFromCart($id){
+    public function deleteFromCart($id)
+    {
         \Cart::session(Session::getId())->remove($id);
-
     }
-    public function increase($id){
-        \Cart::session(Session::getId())->update($id,array('quantity' => 1,));
+    public function increase($id)
+    {
+        \Cart::session(Session::getId())->update($id, array('quantity' => 1,));
     }
-    public function decrease($id){
-        \Cart::session(Session::getId())->update($id,array('quantity' => -1,));
+    public function decrease($id)
+    {
+        \Cart::session(Session::getId())->update($id, array('quantity' => -1,));
     }
 }

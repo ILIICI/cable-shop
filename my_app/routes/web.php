@@ -3,9 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PageController;
-use App\View\Components\product_details;
-use App\Http\Controllers\SmartphoneController;
-use App\Http\Controllers\ProductDescriptionController;
 
 /*
 |--------------------------------------------------------------------------

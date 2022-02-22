@@ -14,12 +14,12 @@ class Navbar extends Model
 
     protected $table = "navbars";
     protected $primaryKey = "id";
-    protected $fillable = ['navbar_item_title','navbar_item_route','slug'];
+    protected $fillable = ['navbar_item_title', 'navbar_item_route', 'slug'];
     public $timestamps = false;
 
     public function subCategory()
     {
-        return $this->hasMany(SubcategoryModel::class,'navbars_id');
+        return $this->hasMany(SubcategoryModel::class, 'navbars_id');
     }
     public function sluggable(): array
     {
@@ -29,5 +29,4 @@ class Navbar extends Model
             ]
         ];
     }
-
 }

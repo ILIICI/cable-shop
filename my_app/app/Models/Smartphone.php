@@ -12,7 +12,7 @@ class Smartphone extends Model
     protected $table = "smartphones";
     protected $primaryKey = "id";
     protected $fillable = ['brand_name'];
-    protected $hidden = ['id','created_at','updated_at'];
+    protected $hidden = ['id', 'created_at', 'updated_at'];
 
     public function smartphoneModel()
     {
