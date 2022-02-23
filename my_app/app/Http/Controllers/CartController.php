@@ -4,18 +4,19 @@ namespace App\Http\Controllers;
 
 use Cart;
 use Illuminate\Http\Request;
-use App\Models\ModelSmartphone;
+use App\Models\Product;
 use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
     public function addToCart(Request $req)
     {
-        $model_smartphone = ModelSmartphone::where('modelsmartphone_id', $req->id)->first();
+
+        $product = Product::where('product_uuid', $req->id)->first();
         \Cart::session(Session::getId())->add([
-            'id' => $model_smartphone->modelsmartphone_id,
-            'name' => $model_smartphone->model_name,
-            'price' => $model_smartphone->price,
+            'id' => $product->product_uuid,
+            'name' => $product->product_name,
+            'price' => $product->price,
             'quantity' => $req->qty ?? 1,
         ]);
         $items = \Cart::getContent();

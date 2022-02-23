@@ -17,7 +17,7 @@ use App\Http\Controllers\PageController;
 Route::get('/', [PageController::class, 'index'])->name('home');
 Route::get('/charger/{slug}', [PageController::class, 'description'])->name('desc');
 Route::get('/search', [PageController::class, 'search'])->name('search');
-Route::get('/category/{product_cat}/{product_sub_cat}', [PageController::class, 'category'])->name('category');
+Route::get('category/{product_cat}/{product_sub_cat}', [PageController::class, 'category'])->name('category');
 Route::get('/product-details/{slug}', [PageController::class, 'productDetails'])->name('product.details');
 Route::get('/checkout', [PageController::class, 'checkout'])->name('checkout');
 

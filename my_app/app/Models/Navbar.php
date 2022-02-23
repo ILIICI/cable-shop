@@ -14,7 +14,7 @@ class Navbar extends Model
 
     protected $table = "navbars";
     protected $primaryKey = "id";
-    protected $fillable = ['navbar_item_title', 'navbar_item_route', 'slug'];
+    protected $fillable = ['navbar_item_title', 'slug'];
     public $timestamps = false;
 
     public function subCategory()

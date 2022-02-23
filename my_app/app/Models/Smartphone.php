@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\ModelSmartphone;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -16,6 +16,6 @@ class Smartphone extends Model
 
     public function smartphoneModel()
     {
-        return $this->hasMany(ModelSmartphone::class);
+        return $this->hasMany(Product::class);
     }
 }

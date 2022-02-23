@@ -19,8 +19,7 @@ class NavbarFactory extends Factory
         $faker = \Faker\Factory::create();
 
         return [
-            'navbar_item_title'=> $this->faker->text(10),
-            'navbar_item_route' =>"pages.category",
+            'navbar_item_title'=> $this->faker->text(10)
         ];
     }
 }

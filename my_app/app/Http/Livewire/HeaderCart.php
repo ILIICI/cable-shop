@@ -4,14 +4,14 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Http\Controllers\SmartphoneController;
-use App\Http\Controllers\ModelSmartphoneController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Session;
 
 class HeaderCart extends Component
 {
     public function render()
     {
-        $model = new ModelSmartphoneController();
+        $model = new ProductController();
         $brand = new SmartphoneController();
         \Cart::session(Session::getId());
         $items = \Cart::getContent();

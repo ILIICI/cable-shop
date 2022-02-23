@@ -19,8 +19,7 @@ class SubcategoryModelFactory extends Factory
     {
         return [
             'navbars_id' =>Navbar::all()->random()->id,
-            'subcategory_item_title'=> $this->faker->text(10),
-            'subcategory_item_route' =>"subcategory",
+            'subcategory_item_title'=> $this->faker->text(10)
         ];
     }
 }

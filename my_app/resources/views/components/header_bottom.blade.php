@@ -10,28 +10,39 @@
                 <div class="main-menu text-left">
                     <nav>
                         <ul>
-                        @foreach ($items as $item)
-                            @if ($item->subCategory->count() > 4)
-                             <li class="mega-menu-position"><a href="shop-page.html">{{ $item->navbar_item_title }}</a>
-                                <ul class="mega-menu">
-                                    @foreach ($item->subCategory as $sub)
-                                         <li><a href="{{ route('category',['product_cat' => $item->slug,'product_sub_cat' => $sub->slug] ) }}">{{ $sub->subcategory_item_title}}</a></li>
-                                    @endforeach
-                                </ul>
-
-                            @elseif($item->subCategory->count() == 1 )
-                                <li><a href="{{ route('category',['product_cat' => $item->slug,'product_sub_cat' => $sub->slug]) }}">{{ $item->navbar_item_title }}</a></li>
-
-                            @else
-                                <li><a href="blog-leftsidebar.html">{{ $item->navbar_item_title }}</a>
-                                    <ul class="submenu">
-                                        @foreach ($item->subCategory as $sub)
-                                            <li><a href="{{ route('category',['product_cat' => $item->slug,'product_sub_cat' => $sub->slug]) }}">{{ $sub->subcategory_item_title}}</a></li>
-                                         @endforeach
-                                    </ul>
-                                </li>
-                            @endif
-                        @endforeach
+                            @foreach ($items as $item)
+                                @if ($item->subCategory->count() > 4)
+                                    <li class="mega-menu-position"><a>{{ $item->navbar_item_title }}</a>
+                                        <ul class="mega-menu">
+                                            @foreach ($item->subCategory as $sub)
+                                                <li><a
+                                                        href="{{ route('category', ['product_cat' => $item->slug, 'product_sub_cat' => $sub->slug]) }}">{{ $sub->subcategory_item_title }}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                @elseif($item->subCategory->count() == 1)
+                                    <li><a
+                                            href="{{ route('category', ['product_cat' => $item->slug, 'product_sub_cat' => $sub->slug]) }}">{{ $item->navbar_item_title }}</a>
+                                        <ul class="submenu">
+                                            @foreach ($item->subCategory as $sub)
+                                                <li><a
+                                                        href="{{ route('category', ['product_cat' => $item->slug, 'product_sub_cat' => $sub->slug]) }}">{{ $sub->subcategory_item_title }}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                @else
+                                    <li><a>{{ $item->navbar_item_title }}</a>
+                                        <ul class="submenu">
+                                            @foreach ($item->subCategory as $sub)
+                                            <li><a
+                                                href="{{ route('category', ['product_cat' => $item->slug, 'product_sub_cat' => $sub->slug]) }}">{{ $sub->subcategory_item_title }}</a>
+                                        </li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                @endif
+                            @endforeach
                     </nav>
                 </div>
             </div>
@@ -57,7 +68,7 @@
                     @livewire('header-cart')
                 </div>
             </div>
-            <x-mobile_menu_area/>
+            <x-mobile_menu_area />
         </div>
     </div>
 </div>
