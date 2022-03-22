@@ -12,4 +12,6 @@
 <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 <script src="{{ asset('assets/js/vendor/modernizr-2.8.3.min.js') }}"></script>
 <script src="https://kit.fontawesome.com/030923a64b.js" crossorigin="anonymous"></script>
+<script src="//unpkg.com/alpinejs" defer></script>
+<script src="https://js.stripe.com/v3/"></script>
 @livewireStyles
